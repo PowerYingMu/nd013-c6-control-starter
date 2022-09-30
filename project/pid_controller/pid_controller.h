@@ -17,18 +17,27 @@ public:
     /*
     * Errors
     */
+  double p_err;
+  double i_err;
+  double d_err;
 
     /*
     * Coefficients
     */
+  double kp;
+  double ki;
+  double kd;
 
     /*
     * Output limits
     */
+  double max_lim;
+  double min_lim;
   
     /*
     * Delta time
     */
+  double dt;
 
     /*
     * Constructor
@@ -62,5 +71,4 @@ public:
 };
 
 #endif //PID_CONTROLLER_H
-
 
