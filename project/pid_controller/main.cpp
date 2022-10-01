@@ -228,70 +228,21 @@ int main ()
   PID pid_steer = PID();
   PID pid_throttle = PID();
   
-  // first try, use large value,small i
-  //pid_steer.Init(1.0,0.001,0.5,-1.2,1.2);
-  //pid_throttle.Init(1.0,0.001,0.5,-1.0,1.0);
-  
-  //second try, half p&d, keep i
-  //pid_steer.Init(0.5,0.001,0.25,-1.2,1.2);
-  //pid_throttle.Init(0.5,0.001,0.25,-1.0,1.0);
-  
-  //third try, 1/5 times p&d, keep i, car cannot move
-  //pid_steer.Init(0.1,0.001,0.05,-1.2,1.2);
-  //pid_throttle.Init(0.1,0.001,0.05,-1.0,1.0);
-  
-  //fourth try, 2.5 times p&d, 10times i, make fast reach the trajectory
-  //pid_steer.Init(0.25,0.01,0.15,-1.2,1.2);
-  //pid_throttle.Init(0.25,0.01,0.15,-1.0,1.0);
-  
-  //fifth try, 2.5 times p&d, 10times i, make fast reach the trajectory
-  //pid_steer.Init(0.2,0.03,0.05,-1.2,1.2);
-  //pid_throttle.Init(0.18,0.04,0.1,-1.0,1.0);
-  
-  //sixth try, throttle makes move, adjust steer
-  //pid_steer.Init(0.2,0.01,0.1,-1.2,1.2);
-  //pid_throttle.Init(0.2,0.015,0.1,-1.0,1.0);
-  
-      //16th try, adjust steer
-  //pid_steer.Init(0.18,0.04,0.25,1.2,-1.2);
-  //pid_throttle.Init(0.25,0.05,0.1,1.0,-1.0);
-  
-        //17th try, for path last two points
-  //pid_steer.Init(0.1,0.005,0.3,1.2,-1.2);
-  //pid_throttle.Init(0.02,0.0005,0.3,1.0,-1.0);
-  
-          //18th try, adjust steer
-  //pid_steer.Init(0.1,0.01,0.3,1.2,-1.2);
-  //pid_throttle.Init(0.2,0.02,0.1,1.0,-1.0);
-  
-            //19th try, for last path point
-  //pid_steer.Init(0.11,0.01,0.01,1.2,-1.2);
-  //pid_throttle.Init(0.2,0.02,0.1,1.0,-1.0);
-  
-  //20th try for closest point,ok
-  //pid_steer.Init(0.3,0.00001,0.5,1.2,-1.2);
-  //pid_throttle.Init(0.2,0.001,0.07,1.0,-1.0);
-
-  //21th try for closest point
-  //pid_steer.Init(0.3,0.0,0.0,1.2,-1.2);
-  //pid_throttle.Init(0.2,0.0,0.0,1.0,-1.0);
-  
-      //22th try for closest point
-  //pid_steer.Init(0.4,0.0,0.4,1.2,-1.2);
-  //pid_throttle.Init(0.2,0.0,0.05,1.0,-1.0);
-  
-    //23th try for closest point, can reach the goal,cross the lane
-  //pid_steer.Init(0.4,0.001,0.4,1.2,-1.2);
-  //pid_throttle.Init(0.2,0.001,0.1,1.0,-1.0);
-  
-      //28th try for closest point, crash with the tird car
-  //pid_steer.Init(0.25,0.001,0.52,1.2,-1.2);
+  // Try1
+  //pid_steer.Init(0.1,0.001,0,1.2,-1.2);
   //pid_throttle.Init(0.2,0.001,0.02,1.0,-1.0);
   
-        //38th try for closest point, reach the goal
+  // Try2
+  //pid_steer.Init(0.3,0.01,0.01,1.2,-1.2);
+  //pid_throttle.Init(0.2,0.001,0.02,1.0,-1.0);
+
+  // Try3
+  //pid_steer.Init(0.3,0.001,0.0001,1.2,-1.2);
+  //pid_throttle.Init(0.2,0.001,0.02,1.0,-1.0);
+
+  // Try4
   pid_steer.Init(0.3,0.001,0.71,1.2,-1.2);
   pid_throttle.Init(0.2,0.001,0.02,1.0,-1.0);
-  
 
   h.onMessage([&pid_steer, &pid_throttle, &new_delta_time, &timer, &prev_timer, &i, &prev_timer](uWS::WebSocket<uWS::SERVER> ws, char *data, size_t length, uWS::OpCode opCode)
   {
@@ -380,10 +331,7 @@ int main ()
           
           
           error_steer = angle_between_points(x_position,y_position,x_points[close_id],y_points[close_id]) - yaw;
-          
-          //error_steer = angle_between_points(x_position,y_position,x_points[x_points.size()-1],y_points[y_points.size()-1]) - yaw;
-          
-          //error_steer = angle_between_points(x_points[x_points.size()-2],y_points[y_points.size()-2],x_points[x_points.size()-1],y_points[y_points.size()-1]) - yaw;
+                    
 
           /**
           * TODO (step 3): uncomment these lines
