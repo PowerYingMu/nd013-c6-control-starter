@@ -116,3 +116,40 @@ Answer the following questions:
 - If the simulation freezes on the desktop mode but is still running on the terminal, close the desktop and restart it.
 - When you will be tuning the PID parameters, try between those values:
 
+# Trajectory Tracking
+
+
+## Objectives
+
+In this projectm a PID controller is designed to perform the trajectory tracking through controlling the steering and throttle. Based on a given trajectory, trajectory tracking is simulated using the CARLA simulator used in the industry.
+
+## Results and Discussions
+
+### Add the plots to your report and explain them (describe what you see)
+
+1. The following figure shows the initial environment of the CARLA simulator. The ego vehicle is the yellow one. THere are three other cars in front of the ego car
+![image](project/Results/Step1_Initial.png)
+
+2. The following figure shows the ego car is passing the first car and performing the lane change maneuver
+![image](project/Results/Pass_First_Car.png)
+
+3. The following figure shows the ego car is turning right at intersection.
+![image](project/Results/Implement_PID_Intersection.png)
+
+4. The following two figures show the control errors of steering and throttle
+![image](project/Results/PID1_Steer_Error.png)
+![image](project/Results/PID1_Throttle_Error.png)
+
+### What is the effect of the PID according to the plots, how each part of the PID affects the control command?
+
+Proportional term is to correct the current value. For example, if the error is large, the control output will be proportionately large by using the gain factor "Kp". Integral term is to reduce the steady state process errors an equilibrium is reached. Derivative term is a best estimate of the future trend of the error, based on its current rate of change. 
+
+After several tuning of three terms, the car can pass all obastacles. but the trajectory tracking is not perfect. there is still potential to improve the PID controller.
+
+### How would you design a way to automatically tune the PID parameters?
+
+First, turn off the Integral and Derivative components for the controller; only use Proportional control. Slowly increase the proportional gain until the process starts to oscillate. This final gain value is known as the ultimate gain. The period of oscillation is the ultimate period. Use Ziegler-Nichols table to fine tunning
+
+### PID controller is a model free controller, i.e. it does not use a model of the car. Could you explain the pros and cons of this type of controller?
+Pro: PID controller is simple and easy to implement
+Cons: Hard to tune. The control action is based on feedback, and there are delays
