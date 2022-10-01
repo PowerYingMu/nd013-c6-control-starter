@@ -125,6 +125,8 @@ In this projectm a PID controller is designed to perform the trajectory tracking
 
 ## Results and Discussions
 
+### Add the plots to your report and explain them (describe what you see)
+1. The following figure is the 
 
 
 
