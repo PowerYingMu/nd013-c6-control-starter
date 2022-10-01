@@ -133,7 +133,7 @@ In this projectm a PID controller is designed to perform the trajectory tracking
 2. The following figure shows the ego car is passing the first car and performing the lane change maneuver
 ![image](project/Results/Pass_First_Car.png)
 
-3. The following figure shows the ego car is turning left at intersection.
+3. The following figure shows the ego car is turning right at intersection.
 ![image](project/Results/Implement_PID_Intersection.png)
 
 
