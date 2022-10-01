@@ -140,6 +140,9 @@ In this projectm a PID controller is designed to perform the trajectory tracking
 ![image](project/Results/PID1_Steer_Error.png)
 ![image](project/Results/PID1_Throttle_Error.png)
 
+### What is the effect of the PID according to the plots, how each part of the PID affects the control command?
 
+Proportional term is to correct the current value. For example, if the error is large, the control output will be proportionately large by using the gain factor "Kp". Integral term is to reduce the steady state process errors an equilibrium is reached. Derivative term is a best estimate of the future trend of the error, based on its current rate of change. 
 
+After several tuning of three terms, the car can pass all obastacles. but the trajectory tracking is not perfect. there is still potential to improve the PID controller.
 
