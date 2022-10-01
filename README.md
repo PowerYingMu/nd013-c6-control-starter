@@ -146,3 +146,10 @@ Proportional term is to correct the current value. For example, if the error is 
 
 After several tuning of three terms, the car can pass all obastacles. but the trajectory tracking is not perfect. there is still potential to improve the PID controller.
 
+### How would you design a way to automatically tune the PID parameters?
+
+First, turn off the Integral and Derivative components for the controller; only use Proportional control. Slowly increase the proportional gain until the process starts to oscillate. This final gain value is known as the ultimate gain. The period of oscillation is the ultimate period. Use Ziegler-Nichols table to fine tunning
+
+### PID controller is a model free controller, i.e. it does not use a model of the car. Could you explain the pros and cons of this type of controller?
+Pro: PID controller is simple and easy to implement
+Cons: Hard to tune. The control action is based on feedback, and there are delays
