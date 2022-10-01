@@ -136,6 +136,10 @@ In this projectm a PID controller is designed to perform the trajectory tracking
 3. The following figure shows the ego car is turning right at intersection.
 ![image](project/Results/Implement_PID_Intersection.png)
 
+4. The following two figures show the control errors of steering and throttle
+![image](project/Results/PID1_Steer_Error.png)
+![image](project/Results/PID1_Throttle_Error.png)
+
 
 
 
