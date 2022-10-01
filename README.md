@@ -116,3 +116,15 @@ Answer the following questions:
 - If the simulation freezes on the desktop mode but is still running on the terminal, close the desktop and restart it.
 - When you will be tuning the PID parameters, try between those values:
 
+# Trajectory Tracking
+
+
+## Objectives
+
+In this projectm a PID controller is designed to perform the trajectory tracking through controlling the steering and throttle. Based on a given trajectory, trajectory tracking is simulated using the CARLA simulator used in the industry.
+
+## Results and Discussions
+
+
+
+
