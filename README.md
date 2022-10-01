@@ -130,9 +130,11 @@ In this projectm a PID controller is designed to perform the trajectory tracking
 1. The following figure shows the initial environment of the CARLA simulator. The ego vehicle is the yellow one. THere are three other cars in front of the ego car
 ![image](project/Results/Step1_Initial.png)
 
-2. The following figure shows the ego is passing the first car and performing the lane change maneuver
+2. The following figure shows the ego car is passing the first car and performing the lane change maneuver
 ![image](project/Results/Pass_First_Car.png)
 
+3. The following figure shows the ego car is turning left at intersection.
+![image](project/Results/Implement_PID_Intersection.png)
 
 
 
